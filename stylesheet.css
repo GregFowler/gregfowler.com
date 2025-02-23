@@ -171,6 +171,7 @@ img{
 .work-logo{
     float:right;
     width: 150px;
+    padding-bottom: 5px;
 }
 
 /* Colors */

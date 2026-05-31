@@ -1,10 +1,11 @@
 html,body{
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: var(--body-font-size, 14px);
-    line-height: 1.5;
+    line-height: 1.6;
     background-color:#f5f7f8;
     padding:0;
     margin:0;
+    color: #333;
 }
 
 h1{font-size:36px;margin: 10px 0 10px 0;}
@@ -15,17 +16,40 @@ h5{font-size:18px;margin: 10px 0 10px 0;}
 h6{font-size:16px;margin: 10px 0 10px 0;}
 
 h1.top, h2.top, h3.top, h4.top, h5.top, h6.top {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
+    color: #344770;
 }
 
 hr{
     border:0;
-    border-top:1px solid #adbac7;
+    border-top:1px solid #e0e5eb;
     margin:20px 0;
 }
 
 img{
     width:100%;
+}
+
+p {
+    margin: 8px 0;
+}
+
+a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 6px 0;
 }
 
 /* Classes */
@@ -34,6 +58,7 @@ img{
     background-color:#606b8b;
     height:60px;
     width:100%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header-home{
@@ -45,6 +70,7 @@ img{
     background-color:#344770;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .header-home:hover{
@@ -82,34 +108,24 @@ img{
     height: 100%;
     padding: 0 15px 0 15px;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
+
 .header-social-icons:hover{
     background-color:#f5f7f8;
     color:#344770;
 }
 
-
 /* Brand icons */
 .fa{
     padding-right: 10px;
 }
-/*.fa-instagram{
-    color: #ff2aff;
-}
-.fa-x-twitter{
-    color: #000000;
-}
-.fa-linkedin{
-    color: #306192;
-}
-.fa-github{
-    color: #000000;
-} */
 
 .main-container{
     margin-left:auto;
     margin-right:auto;
     max-width:1400px;
+    padding: 0 10px;
 }
 
 .grid{
@@ -118,9 +134,11 @@ img{
     grid-gap: 20px;
 }
 
-.content{
-    color:#adbac7!important;
-    background-color:#292e35!important
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
 }
 
 .column{
@@ -130,48 +148,180 @@ img{
 .column-card{
     background-color:#ffffff;
     border:0px;
-    padding:20px;
+    padding:25px;
     margin-top:20px;
-    border-radius:6px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius:8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.column-card:hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 8px 24px 0 rgba(0, 0, 0, 0.12);
 }
 
 .profile-name{
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.5;
-    padding:0 0 10px 0;
+    padding:0 0 15px 0;
     margin:0;
     width: 100%;
     text-align: center;
+    color: #344770;
 }
+
+.profile-detail {
+    margin: 8px 0;
+    text-align: center;
+}
+
 .profile-pic{
-    width: 200px;
+    width: 180px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill-item {
+    display: inline-block;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #e7f1ff;
+    color: #0969da;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #d0e5ff;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: #0969da;
+    color: white;
+}
+
+.skills-list p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.skills-list strong {
+    color: #344770;
+}
+
+/* Employment Cards */
 .employment-card{
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
+
 .employment-card-header{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 12px;
 }
+
 .employment-card-title{
-    display:inline-block;
+    display: inline-block;
 }
+
+.employment-card-title h5 {
+    color: #344770;
+    margin: 0;
+}
+
 .employment-card-dates{
-    display:inline-block;
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
 }
+
 .employment-card-employer{
-    display:inline-block;
-    padding: 0 10px 0 10px;
+    display: inline-block;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
 }
+
 .work-logo{
     float: right;
-    width: 150px;
+    width: 120px;
+    margin-left: 15px;
+}
+
+.employment-card p {
+    margin: 10px 0;
+}
+
+.employment-card ul {
+    margin: 10px 0 10px 20px;
+    padding-left: 0;
+}
+
+.employment-card ul li {
+    margin: 6px 0;
+    color: #555;
+}
+
+/* Qualifications */
+.qualification-item {
+    margin-bottom: 20px;
+}
+
+.qualification-item h5 {
+    color: #344770;
+    margin-bottom: 5px;
+}
+
+.qualification-item h6 {
+    color: #666;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.qualification-item p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.qualification-item a {
+    color: #0969da;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+    font-size: 13px;
+    border-top: 1px solid #e0e5eb;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Colors */
@@ -181,3 +331,25 @@ img{
 .text-grey,.text-grey-hover:hover{color:#757575!important}
 .text-light-grey,.text-light-grey-hover:hover{color:#f1f1f1!important}
 .text-dark-grey,.text-dark-grey-hover:hover{color:#3a3a3a!important}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .header-container {
+        background-color: #344770;
+        color: white;
+    }
+    
+    .column-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+    
+    footer {
+        display: none;
+    }
+}
